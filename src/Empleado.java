@@ -54,4 +54,8 @@ public abstract class Empleado {
 
     public abstract String obtenerTipoEmpleado();
 
+    @Override
+    public String toString() {
+        return "DNI: " + DNI + ", Nombres: " + nombres + ", Apellidos: " + apellidos + ", Rol: " + rolEmpleado;
+    }
 }

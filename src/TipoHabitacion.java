@@ -1,5 +1,5 @@
 public enum TipoHabitacion {
-    SUITS,
+    SINGLE,
     DOBLE,
     SUITE,
 }

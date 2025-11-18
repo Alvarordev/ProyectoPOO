@@ -4,7 +4,6 @@ public class Recepcionista extends Empleado{
     }
     @Override
     public String obtenerTipoEmpleado(){
-        return "Recepcionista";
-
+        return "recepcionista";
     }
 }

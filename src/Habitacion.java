@@ -67,4 +67,9 @@ public  class Habitacion {
     public EstadoHabitacion getEstado() {
         return estado;
     }
+
+    @Override
+    public String toString() {
+        return "Numero: " + numero + ", Tipo de Habitacion: " + tipo + ", Capacidad Maxima: " + capacidadMaxima + ", Precio por Noche: " + precioPorNoche + ", Estado de habitacion: " + estado;
+    }
 }
