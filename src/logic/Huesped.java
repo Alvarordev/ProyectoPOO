@@ -1,3 +1,5 @@
+package logic;
+
 public class Huesped {
     protected int DNI;
     protected String nombres;

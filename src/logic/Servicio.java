@@ -1,3 +1,5 @@
+package logic;
+
 public class Servicio {
     protected String nombre;
     protected double precio;
@@ -45,6 +47,6 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return "Servicio: " + nombre + " - Precio: " + precio;
+        return "logic.Servicio: " + nombre + " - Precio: " + precio;
     }
 }

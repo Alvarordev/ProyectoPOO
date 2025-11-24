@@ -1,3 +1,5 @@
+package logic;
+
 public class ServicioConsumido {
     protected Servicio servicio;
     protected int cantidad;

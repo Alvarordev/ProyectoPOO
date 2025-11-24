@@ -1,9 +1,11 @@
+package logic;
+
 public  class Habitacion {
     private int numero;
     private TipoHabitacion tipo;
     private int capacidadMaxima;
     private double precioPorNoche;
-    private  EstadoHabitacion estado;
+    private EstadoHabitacion estado;
 
     public Habitacion(int numero, TipoHabitacion tipo, int capacidadMaxima, double precioPorNoche, EstadoHabitacion estado){
         if(numero <= 0){
@@ -70,6 +72,6 @@ public  class Habitacion {
 
     @Override
     public String toString() {
-        return "Numero: " + numero + ", Tipo de Habitacion: " + tipo + ", Capacidad Maxima: " + capacidadMaxima + ", Precio por Noche: " + precioPorNoche + ", Estado de habitacion: " + estado;
+        return "Numero: " + numero + ", Tipo de logic.Habitacion: " + tipo + ", Capacidad Maxima: " + capacidadMaxima + ", Precio por Noche: " + precioPorNoche + ", Estado de habitacion: " + estado;
     }
 }

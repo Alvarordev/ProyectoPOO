@@ -1,10 +1,13 @@
+package logic;
+
 public abstract class Empleado {
     protected int DNI;
     protected String nombres;
     protected  String apellidos;
-    protected  RolEmpleado rolEmpleado;
+    protected RolEmpleado rolEmpleado;
+    protected String password;
 
-    public Empleado(int DNI,String nombres, String apellidos,RolEmpleado rolEmpleado){
+    public Empleado(int DNI, String nombres, String apellidos, RolEmpleado rolEmpleado, String password){
         if(DNI<10000000 || DNI >99999999){
             System.out.println("El DNI es incorrecto");
             this.DNI=0;
@@ -14,6 +17,7 @@ public abstract class Empleado {
         this.nombres = nombres;
         this.apellidos=apellidos;
         this.rolEmpleado=rolEmpleado;
+        this.password = password;
     }
 
     public void setDNI(int DNI) {
@@ -36,6 +40,10 @@ public abstract class Empleado {
 
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getDNI() {
         return DNI;
     }
@@ -50,6 +58,10 @@ public abstract class Empleado {
 
     public RolEmpleado getRolEmpleado() {
         return rolEmpleado;
+    }
+
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
     }
 
     public abstract String obtenerTipoEmpleado();

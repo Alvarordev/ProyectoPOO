@@ -1,8 +1,10 @@
+package logic;
+
 public class Reserva {
     protected Huesped huesped;
     protected TipoHabitacion tipoHabitacion;
-    protected String fechaInicio;   // formato dd/mm/aa
-    protected String fechaFin;      // formato dd/mm/aa
+    protected String fechaInicio;
+    protected String fechaFin;
     protected Habitacion habitacionAsignada;
 
     public Reserva(Huesped huesped, TipoHabitacion tipoHabitacion,
@@ -11,16 +13,17 @@ public class Reserva {
         this.huesped = huesped;
         this.tipoHabitacion = tipoHabitacion;
 
-        if (fechaInicio == null || fechaInicio.trim().isEmpty()) {
-            System.out.println("Fecha inicio inválida");
-            this.fechaInicio = "";
+        // Validar fecha
+        if (fechaInicio == null || !fechaInicio.matches("\\d{4}/\\d{2}/\\d{2}")) {
+            System.err.println("Formato de fecha de inicio inválido. Use yyyy/mm/dd.");
+            this.fechaInicio = "1900/01/01";
         } else {
             this.fechaInicio = fechaInicio;
         }
 
-        if (fechaFin == null || fechaFin.trim().isEmpty()) {
-            System.out.println("Fecha fin inválida");
-            this.fechaFin = "";
+        if (fechaFin == null || !fechaFin.matches("\\d{4}/\\d{2}/\\d{2}")) {
+            System.err.println("Formato de fecha de fin inválido. Use yyyy/mm/dd.");
+            this.fechaFin = "1900/01/01";
         } else {
             this.fechaFin = fechaFin;
         }
@@ -51,18 +54,18 @@ public class Reserva {
 
 
     public void setFechaInicio(String fechaInicio) {
-        if (fechaInicio != null && !fechaInicio.trim().isEmpty()) {
+        if (fechaInicio != null && fechaInicio.matches("\\d{4}/\\d{2}/\\d{2}")) {
             this.fechaInicio = fechaInicio;
         } else {
-            System.out.println("Fecha inicio inválida");
+            System.err.println("Formato de fecha de inicio inválido. Use yyyy/MM/dd.");
         }
     }
 
     public void setFechaFin(String fechaFin) {
-        if (fechaFin != null && !fechaFin.trim().isEmpty()) {
+        if (fechaFin != null && fechaFin.matches("\\d{4}/\\d{2}/\\d{2}")) {
             this.fechaFin = fechaFin;
         } else {
-            System.out.println("Fecha fin inválida");
+            System.err.println("Formato de fecha de fin inválido. Use yyyy/MM/dd.");
         }
     }
 
@@ -72,12 +75,12 @@ public class Reserva {
 
 
     public int calcularNoches() {
-        return 1;
+        return DateUtil.calcularNoches(this.fechaInicio, this.fechaFin);
     }
 
     @Override
     public String toString() {
-        return "Reserva de: " + huesped.getNombres() + " " + huesped.getApellidos() +
+        return "logic.Reserva de: " + huesped.getNombres() + " " + huesped.getApellidos() +
                 ", Tipo: " + tipoHabitacion +
                 ", Inicio: " + fechaInicio +
                 ", Fin: " + fechaFin +

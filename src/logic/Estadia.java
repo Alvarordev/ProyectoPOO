@@ -1,3 +1,5 @@
+package logic;
+
 import java.util.ArrayList;
 
 public class Estadia {
@@ -53,7 +55,7 @@ public class Estadia {
     @Override
     public String toString() {
         return "Estadía en habitación: " + habitacion.getNumero() +
-                ", Huesped: " + reserva.getHuesped().getNombres() + " " + reserva.getHuesped().getApellidos() +
+                ", logic.Huesped: " + reserva.getHuesped().getNombres() + " " + reserva.getHuesped().getApellidos() +
                 ", Total: " + calcularTotalFinal();
     }
 }
